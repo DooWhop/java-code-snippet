@@ -733,6 +733,50 @@ public class DateUtil {
 		}
 		return null;
 	}
-//	public static void main(String[] args) {
-//	}
+		
+	/**
+	 * @功能描述: 验证yyyy-MM-dd日期格式
+	 * 
+	 * @param dateStr 日期字符串
+	 * @return
+	 */
+	public static boolean isValidDate(String dateStr) {
+		boolean convertSuccess = true;
+		// 判断格式为yyyy-MM-dd
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			format.setLenient(false);
+			format.parse(dateStr);
+		} catch (ParseException | NullPointerException e) {
+			// 如果抛出ParseException或者NullPointerException，就说明格式不对
+			convertSuccess = false;
+		}
+		return convertSuccess;
+	}
+	
+	/**
+	 * @功能描述: 验证pattern日期格式
+	 * @param dateStr 日期字符串
+	 * @param pattern 日期格式
+	 * @return
+	 */
+	public static boolean isValidDatePattern(String dateStr, String pattern) {
+		boolean convertSuccess = true;
+		// 判断格式为yyyy-MM-dd
+		SimpleDateFormat format = new SimpleDateFormat(pattern);
+		try {
+			format.setLenient(false);
+			format.parse(dateStr);
+		} catch (ParseException | NullPointerException e) {
+			// 如果抛出ParseException或者NullPointerException，就说明格式不对
+			convertSuccess = false;
+		}
+		return convertSuccess;
+	}
+	
+	
+	public static void main(String[] args) {
+
+	}
+	
 }
