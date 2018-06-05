@@ -3,9 +3,11 @@ package com.doowhop.snippet.date;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 
 public class DateUtil {
@@ -774,9 +776,25 @@ public class DateUtil {
 		return convertSuccess;
 	}
 	
+	/** 得到过去几个月的月份信息
+	 * @param num
+	 * @return List<yyyyMM>
+	 */
+	public static List<String> getLastMonthsList(int num){
+		List<String> months = new ArrayList<String>();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
+		Calendar cal = Calendar.getInstance();
+		for(int i=0; i<num; i++) {
+			cal.add(Calendar.MONTH, -1);
+			String m = sdf.format(cal.getTime());
+			months.add(m);
+		}	
+		return months;		
+	}
+	
 	
 	public static void main(String[] args) {
-
+		getLastMonthsList(6);
 	}
 	
 }
