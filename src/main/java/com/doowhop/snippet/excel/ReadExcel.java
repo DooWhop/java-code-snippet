@@ -42,7 +42,7 @@ public class ReadExcel {
 		        map.put("parentAreaNo", parentAreaNo);
 		        list.add(map);
 		    }
-		    System.out.println(list.size());
+		   /* System.out.println(list.size());
 		    
 		    FileWriter fw = new FileWriter(new File("C:\\Users\\liudp\\Desktop\\area1.sql"));
 		    for (Map<String, Object> map : list) {				
@@ -52,7 +52,7 @@ public class ReadExcel {
 				fw.flush();
 					
 			}
-		    fw.close();
+		    fw.close();*/
 		}
 
 	    System.out.println("done!");

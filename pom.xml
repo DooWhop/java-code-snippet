@@ -21,7 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>	
@@ -82,13 +82,18 @@
 		    <version>3.15</version>  
 		</dependency>  
 		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk16 -->
 		<dependency>
 		    <groupId>org.bouncycastle</groupId>
 		    <artifactId>bcprov-jdk16</artifactId>
 		    <version>1.45</version>
 		</dependency>
-  
         
        <!--移除热启动依赖, 修改代码热启动后会导致定时任务重复 -->
         <!-- 热启动，热部署依赖包 --> 

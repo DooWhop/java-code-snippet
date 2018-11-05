@@ -1,4 +1,4 @@
-package rsa;
+package com.doowhop.snippet.rsa;
 
 import java.security.KeyFactory;
 import java.security.KeyPair;
